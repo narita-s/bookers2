@@ -18,6 +18,9 @@
         </li>
         <li>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <li>
+        <%= link_to '投稿フォーム', new_book_path %>
+        </li>
         </li>
       <% else %>
         <li>
@@ -26,6 +29,7 @@
         <li>
           <%= link_to "ログイン", new_user_session_path %>
         </li>
+        
       <% end %>
     </header>
     <%= yield %>

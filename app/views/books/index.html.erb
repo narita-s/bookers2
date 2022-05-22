@@ -1,7 +1,7 @@
 <% @books.each do |book| %>
 <div>
   <p><%= link_to book_path(book.id) do %>
-  <p><%= image_tagbook.user.get_profile_image(100,100) %></p>
+  <p><%= image_tag book.user.get_profile_image(100,100) %></p>
   <% end %></p>
   <p>Title：<%= link_to book_path(book.id) do %>
     <%= book.title %>

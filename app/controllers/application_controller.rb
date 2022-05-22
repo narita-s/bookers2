@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
 
 # サインイン後のページ
   def after_sign_in_path_for(resource)
-    books_path
+    user_path(@user.id)
   end
 
-# サインアウト後のページ
+# サインアウト a後のページ
   def after_sign_out_path_for(resource)
     root_path
   end

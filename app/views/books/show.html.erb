@@ -6,7 +6,7 @@
         <div class='col-md-3'>
           <%= render '/users/userinfo', users: @users %>
         </div>
-        
+
         <div class='col-md-8 offset-md-1'>
       		<h2>Book detail</h2>
       		<table class='table'>
@@ -17,7 +17,11 @@
       		  </td>
       		  <td><%= @book.title %></td>
       		  <td><%= @book.body %></td>
-      		  <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %></td>
+      		  <td>
+      		    <% if @book.user == current_user %>
+      		    <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %>
+      		    <% end %>
+      		  </td>
             <td>
               <% if @book.user == current_user %>
               <%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-sm btn-danger" %>

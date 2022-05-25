@@ -75,6 +75,18 @@
             </li>
           <% end %>
     </header>
+    
+    <main>
+      <p>
+        <% if flash[:notice] %>
+          <%= flash[:notice] %>
+        <% end %>
+        <% if flash[:alert] %>
+          <%= flash[:alert] %>
+        <% end %>
+       </p>
+    </main>
+    
     <%= yield %>
 
     <footer>
